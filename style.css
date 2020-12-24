@@ -9,13 +9,22 @@ body {
     font-family: sans-serif;
     background-color: cornflowerblue;
 }
-
+@keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0;
+    }
+}
 
 #main_play_area {
     background-color: black;
     background-image: url(./img/5a2220c9858871.913090301512186057547.png);
+    background-repeat: repeat-x;
+    animation: slideright 10000s infinite linear;
     height: 600px;
-    width: 600px;
+    width: 2100px;
     
 }
 
@@ -27,8 +36,14 @@ body {
     top: 250px;
 }
 
+.laser {
+    position: relative;
+    width: 40px;
+    height: 10px;
+}
 footer {
     display: flex;
     justify-content: end;
     align-items: flex-end;
+    margin-left: 10px;
 }

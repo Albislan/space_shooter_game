@@ -41,7 +41,7 @@ function moveDown() {
 function fireLaser() {
     let laser = createLaserElement();
     playArea.appendChild(laser);
-    moveLaser();
+    moveLaser(laser);
 }
 
 function createLaserElement() {
@@ -51,17 +51,17 @@ function createLaserElement() {
     newLaser.src = 'img/disparo.png';
     newLaser.classList.add('laser');
     newLaser.style.left = xPosition + 'px';
-    newLaser.style.top = yPosition - 5 + 'px';
+    newLaser.style.top = (yPosition - 5) + 'px';
     return newLaser;
 }
 
-function moveLaser() {
+function moveLaser(laser) {
     let laserInterval = setInterval(() => {
         let xPosition = parseInt(laser.style.left);
-        if(xPosition === 340) {
+        if(xPosition === 700) {
             laser.remove();
         } else {
-            laser.style.left = xPosition + 8 +'px';
+            laser.style.left = (xPosition + 8) + 'px';
         }
     }, 10);
 }
